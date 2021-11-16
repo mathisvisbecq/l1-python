@@ -27,18 +27,32 @@ print(temps[0], "jour", temps[1], "heure", temps[2], "minute", temps[3], "second
 
 #fonction auxiliaire ici
 
-def afficheTemps(temps):
-    for i in range(4):   
-        if temps[i]  > 1 :
-            print(temps[i])
-        elif temps[i] == 1 :
-            print(temps[i])
+def afficheTemps(temps):   
+        if temps[0]  > 1 :
+           print(temps[0], "jours")
+        elif temps[0] == 1 :
+            print(temps[0], "jours")
         else :
             pass
-
-
-    
-
-    
+        if temps[1]  > 1 :
+            print(temps[1], "heures")
+        elif temps[1] == 1 :
+            print(temps[1], "heure")
+        else :
+            pass
+        if temps[2]  > 1 :
+            print(temps[2], "minutes")
+        elif temps[2] == 1 :
+            print(temps[2], "minute")
+        else :
+            pass
+        if temps[3]  > 1 :
+            print(temps[3], "secondes")
+        elif temps[3] == 1 :
+            print(temps[3], "seconde")
+        else :
+            pass
+        return 
+        
 afficheTemps((1,0,14,23))
 
