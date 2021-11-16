@@ -18,12 +18,27 @@ def secondeEnTemps(seconde):
     s = hs % 60
     print(j, h, m, s)
     return
-    
-
-    
-temps = secondeEnTemps(342094)
+temps = str(secondeEnTemps(342094))
+temps = (3,23,1,34)
 print(temps[0], "jour", temps[1], "heure", temps[2], "minute", temps[3], "seconde")
 
 
 
+
+#fonction auxiliaire ici
+
+def afficheTemps(temps):
+    for i in range(0, 4) :   
+        if temps[i]  > 1 :
+            print(temps[i])
+        elif temps[i] == 1 :
+            print(temps[i])
+        else :
+            print("")
+
+
+    
+
+    
+afficheTemps((1,0,14,23))
 
