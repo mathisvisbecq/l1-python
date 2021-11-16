@@ -28,13 +28,13 @@ print(temps[0], "jour", temps[1], "heure", temps[2], "minute", temps[3], "second
 #fonction auxiliaire ici
 
 def afficheTemps(temps):
-    for i in range(0, 4) :   
+    for i in range(4):   
         if temps[i]  > 1 :
             print(temps[i])
         elif temps[i] == 1 :
             print(temps[i])
         else :
-            print("")
+            pass
 
 
     
