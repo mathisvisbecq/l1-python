@@ -111,3 +111,6 @@ def proportionTemps(temps,proportion):
 #afficheTemps(proportionTemps((2,0,36,0),0.2))
 #appeler la fonction en échangeant l'ordre des arguments
 
+
+
+
