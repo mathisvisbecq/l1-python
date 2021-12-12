@@ -104,13 +104,122 @@ def proportionTemps(temps,proportion):
         print("Erreur de proportion (Doit etre entre 0 et 1)")
         return 0
     return secondeEnTemps(tempsEnSeconde(temps)*proportion)
-
-
-
-
 #afficheTemps(proportionTemps((2,0,36,0),0.2))
 #appeler la fonction en échangeant l'ordre des arguments
 
 
 
 
+def tempsEnDate(temps):
+    print(temps)
+    tmps = [0, 0, 0, 0, 0, 0]
+    mois = (temps[0] % 365)
+    tmps[0] = 1970 + (temps[0] // 365)
+    if(mois <= 31):
+        tmps[1] = 1
+        tmps[2] = mois % 31 + 1
+    elif(mois <= 59):
+        tmps[1] = 2
+        tmps[2] = mois % 28 + 1
+    elif(mois <= 90):
+        tmps[1] = 3
+        tmps[2] = mois % 31 + 1
+    elif(mois <= 120):
+        tmps[1] = 4
+        tmps[2] = mois % 30 + 1
+    elif(mois <= 151):
+        tmps[1] = 5
+        tmps[2] = mois % 31 + 1
+    elif(mois <= 181):
+        tmps[1] = 6
+        tmps[2] = mois % 30 + 1
+    elif(mois <= 212):
+        tmps[1] = 7
+        tmps[2] = mois % 31 + 1
+    elif(mois <= 243):
+        tmps[1] = 8
+        tmps[2] = mois % 31 + 1
+    elif(mois <= 273):
+        tmps[1] = 9
+        tmps[2] = mois % 30 + 1
+    elif(mois <= 304):
+        tmps[1] = 10
+        tmps[2] = mois % 31 + 1 
+    elif(mois <= 334):
+        tmps[1] = 11
+        tmps[2] = mois % 30 + 1 
+    else:
+        tmps[1] = 12
+        tmps[2] = mois % 31 + 1
+
+    tmps[3] = tmps[1]
+    tmps[4] = tmps[2]
+    tmps[5] = tmps[3] 
+
+    return tmps
+
+
+def afficheDate(temps):
+    annee = temps[0]
+    moi = temps[1]
+    jour = temps[2]
+    heure = temps[3]
+    minute = temps[4]
+    seconde = temps[5]
+
+
+    annees = str(annee)
+
+    if (moi == 1):
+        mois = ' Janvier '
+    elif (moi == 2):
+        mois = ' Fevrier '
+    elif (moi == 3):
+        mois = ' Mars '
+    elif (moi == 4):
+        mois = ' Avril '
+    elif (moi == 5):
+        mois = ' Mai '  
+    elif (moi == 6):
+        mois = ' Juin ' 
+    elif (moi == 7):
+        mois = ' Juillet ' 
+    elif (moi == 8):
+        mois = ' Aout '
+    elif (moi == 9):
+        mois = ' Septembre '
+    elif (moi == 10):
+        mois = ' Octobre '
+    elif (moi == 11):
+        mois = ' Novembre '
+    elif (moi == 12):
+        mois = ' Decembre '
+    else:
+        mois = ''
+
+    
+    jours = str(jour)
+
+    if(heure == 0):
+        heures = ''
+    elif(heure == 1):
+        heures = str(heure) + ' Heure '
+    else:
+        heures = str(heure) + ' Heures '
+    
+
+    if(minute == 0):
+        minutes = ''
+    elif(minute == 1):
+        minutes = str(minute) + ' Minute '
+    else:
+        minutes = str(minute) + ' Minutes '
+    
+    if(seconde == 0):
+        secondes = ''
+    elif(seconde == 1):
+        secondes = ' et ' + str(seconde) + ' Seconde '
+    else:
+        secondes = ' et ' + str(seconde) + ' Secondes '
+    
+    print("Cela représente le" + jours + mois + annees, "a", heures + minutes + secondes)
