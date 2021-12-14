@@ -223,3 +223,41 @@ def afficheDate(temps):
         secondes = ' et ' + str(seconde) + ' Secondes '
     
     print("Cela représente le" + jours + mois + annees, "a", heures + minutes + secondes)
+
+
+
+def bisextile(jour):
+
+    njour = jour
+    nb = 0
+
+    while(njour > 366):
+        njour = njour - 365
+
+
+        if((nb%4 == 0 and (1970 + nb)%100 != 0) or (1970 + nb)%400 == 0):
+            print(1970 + nb)
+
+
+def nombreBisextile(jour):
+
+
+    njour = jour
+    nb = 0
+    nbbisex = 0
+
+
+    while(njour > 366):
+        njour -= 365
+        nb += 1
+
+
+        if((nb%4 == 0 and (1970 + nb) % 100 != 0) or (1970 + nb) % 400 == 0):
+
+            nbbisex += 1
+    return nbbisex
+
+
+
+def tempsEnDateBisextile(temps):
+    print(temps)
